@@ -49,7 +49,7 @@ function SimpleLiveworksheetHack(jsonlang) {
             }, delay)
         } else {
             console.log("%c"+json.completed+(nulos>0?" "+json.none.replace('<number>', nulos):""), 'background: #005e06; color: white; font-size: 16px');
-            console.log('%c'+json.dev, 'color: #804949');
+            console.log('%c'+json.dev, 'color: #941010');
             document.querySelector("#capafinish").ariaChecked = true;
         }
     }
