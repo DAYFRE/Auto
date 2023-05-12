@@ -4,14 +4,13 @@ const sites = [
     scriptUrl: "https://raw.githubusercontent.com/DAYFRE/Auto/main/liveworksheets.js"
   },
   {
-    url: "https://docs.google.com",
+    url: "https://google.com",
     scriptUrl: "https://raw.githubusercontent.com/DAYFRE/Auto/main/GoogleFrom.js"
   }
 ];
 
 const currentUrl = window.location.href;
-
-const site = sites.find(site => currentUrl.includes(site.url));
+const site = sites.find(s => currentUrl.includes(s.url));
 
 if (site) {
   fetch(site.scriptUrl)
