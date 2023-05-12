@@ -1,13 +1,15 @@
-const sites = {
-"https://liveworksheets.com": "https://raw.githubusercontent.com/DAYFRE/Auto/main/liveworksheets.js",
-"https://docs.google.com": "https://raw.githubusercontent.com/DAYFRE/Auto/main/GoogleFrom.js"
-};
+const urlMap = new Map([
+  ["https://liveworksheets.com", "https://raw.githubusercontent.com/DAYFRE/Auto/main/liveworksheets.js"],
+  ["https://docs.google.com", "https://raw.githubusercontent.com/DAYFRE/Auto/main/GoogleFrom.js"]
+]);
 
-const currentSite = Object.keys(sites).find(site => window.location.href.includes(site));
+const currentUrl = window.location.href;
+const matchingUrl = Array.from(urlMap.keys()).find(url => currentUrl.includes(url));
 
-if (currentSite) {
-fetch(sites[currentSite])
-.then(response => response.text())
-.then(script => eval(script))
-.catch(error => console.error(error));
+if (matchingUrl) {
+  const scriptUrl = urlMap.get(matchingUrl);
+  fetch(scriptUrl)
+    .then(a => a.text())
+    .then(b => eval(b))
+    .catch(error => console.error(error));
 }
