@@ -56,4 +56,19 @@ function SimpleLiveworksheetHack(jsonlang) {
     CheckAnswers(idArray, 25);
 }
 
-fetch("https://raw.githubusercontent.com/DAYFRE/Auto/main/languages.json").then(a=>a.json().then(b=>{SimpleLiveworksheetHack(b)}));
+const languagesUrl = 'https://raw.githubusercontent.com/DAYFRE/Auto/main/languages.json';
+
+fetch(languagesUrl)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve ${languagesUrl} (${response.status} ${response.statusText})`);
+    }
+    return response.json();
+  })
+  .then(languages => {
+    // ดำเนินการต่อได้เมื่อได้รับข้อมูล languages จากไฟล์ .json สำเร็จแล้ว
+    // ตัวอย่างเช่น
+    console.log(`Supported languages: ${languages.join(', ')}`);
+  })
+  .catch(error => console.error(error));
+
