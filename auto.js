@@ -10,7 +10,8 @@ const sites = [
 ];
 
 const currentUrl = window.location.href;
-const site = sites.find(s => currentUrl.includes(s.url));
+
+const site = sites.find(site => currentUrl.includes(site.url));
 
 if (site) {
   fetch(site.scriptUrl)
