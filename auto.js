@@ -4,8 +4,13 @@ if (window.location.href.includes("https://liveworksheets.com")) {
     eval(b);
   }));
 } else if (window.location.href.includes("https://quizlet.com")) {
-    fetch("https://raw.githubusercontent.com/DAYFRE/Auto/main/Quizlet.js")
-    .then(a=>a.text().then(b=>{
-      eval(b);
-    }));
-  }
+  fetch("https://raw.githubusercontent.com/DAYFRE/Auto/main/Quizlet.js")
+  .then(a=>a.text().then(b=>{
+    eval(b);
+  }));
+} else if (window.location.href.includes("https://www.khanacademy.org/")) {
+  fetch("https://raw.githubusercontent.com/DAYFRE/Auto/main/KhanAcademy.js")
+  .then(a=>a.text().then(b=>{
+    eval(b);
+  }));
+}
