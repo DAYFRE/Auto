@@ -24,7 +24,7 @@ function SimpleLiveworksheetHack(jsonlang) {
                 element = Array.from(document.querySelectorAll('[id^="dragablediv"]')).filter(b => (b.style.top.includes(arr[incr][1]) && b.style.left.includes(arr[incr][2])))[0];
                 drag = contenidorellenado[contenidorellenado.findIndex(entry => entry[0].includes(arr[incr][0].replace('drag:','drop:')))];
                 element.style.top = drag[1]+"px"; element.style.left = drag[2]+"px";
-                console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #005e06; color: white; font-size: 12px')
+                console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #000000; color: white; font-size: 12px')
             } else if(arr[incr][0].includes('choose:')) {
                 element = document.querySelectorAll('[id^="selectbox"]')[choose];
                 ans = arr[incr][0].replace('choose:','').split('/').findIndex(entry => entry.includes("*")), element.selectedIndex = ans+1;
@@ -34,7 +34,7 @@ function SimpleLiveworksheetHack(jsonlang) {
                 let yvmShadow = document.createElementNS('http://www.w3.org/2000/svg', "line"); 
                 yvmShadow.setAttribute("x1",drag[2]+drag[4]/2); yvmShadow.setAttribute("y1",drag[1]+random(drag[3])); yvmShadow.setAttribute("x2",arr[incr][2]+arr[incr][4]/2); yvmShadow.setAttribute("y2",arr[incr][1]+random(arr[incr][3])); yvmShadow.setAttribute("stroke","darkblue"); yvmShadow.style.stroke = "darkblue"; yvmShadow.style.strokeWidth = "5px"
                 document.querySelector('#elsvgdefinitivo').appendChild(yvmShadow); drag[5] = arr[incr][0]; drag[0].replace('join', 'joined'); arr[incr][5] = arr[incr][0]; }; arr[incr][0] = arr[incr][0].replace('join', 'joined'); 
-                console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #005e06; color: white; font-size: 12px') 
+                console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #000000; color: white; font-size: 12px') 
             } else if (arr[incr][0].includes('listen') && arr[incr][0].includes(':') || arr[incr][0].includes('joined:') || arr[incr][0].includes('drop:') || arr[incr][0].includes('https://youtu.be/')) {
             } else if (arr[incr][0] =='') {
                 text++; console.log("%c"+incr+" | "+json.free, 'background: yellow; color: black; font-size: 12px'); 
