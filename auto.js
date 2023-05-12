@@ -1,16 +1,5 @@
-if (window.location.href.includes("https://liveworksheets.com")) {
+if (window.location.href.includes("liveworksheets.com")) {
   fetch("https://raw.githubusercontent.com/DAYFRE/Auto/main/liveworksheets.js")
-  .then(a=>a.text().then(b=>{
-    eval(b);
-  }));
-} else if (window.location.href.includes("https://quizlet.com")) {
-  fetch("https://raw.githubusercontent.com/DAYFRE/Auto/main/Quizlet.js")
-  .then(a=>a.text().then(b=>{
-    eval(b);
-  }));
-} else if (window.location.href.includes("https://www.khanacademy.org/")) {
-  fetch("https://raw.githubusercontent.com/DAYFRE/Auto/main/KhanAcademy.js")
-  .then(a=>a.text().then(b=>{
-    eval(b);
-  }));
+  .then(a => a.text().then(b => eval(b)))
+  .catch(error => console.error(error));
 }
