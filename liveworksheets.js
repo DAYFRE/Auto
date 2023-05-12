@@ -15,11 +15,11 @@ function SimpleLiveworksheetHack(jsonlang) {
             if(arr[incr][0].includes('select:')) {
                 element = document.querySelectorAll('[id^="selectablediv"]')[select];
                 arr[incr][0].includes('yes')?element.click():{};
-                select++; console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #005e06; color: white; font-size: 12px') 
+                select++; console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #000000; color: white; font-size: 12px') 
             } else if(arr[incr][0].includes('tick:')) {
                 element = document.querySelectorAll('[id^="tickbox"]')[tick];
                 arr[incr][0].includes('yes')?element.click():{};
-                tick++; console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #005e06; color: white; font-size: 12px') 
+                tick++; console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #000000; color: white; font-size: 12px') 
             } else if(arr[incr][0].includes('drag:')) {
                 element = Array.from(document.querySelectorAll('[id^="dragablediv"]')).filter(b => (b.style.top.includes(arr[incr][1]) && b.style.left.includes(arr[incr][2])))[0];
                 drag = contenidorellenado[contenidorellenado.findIndex(entry => entry[0].includes(arr[incr][0].replace('drag:','drop:')))];
@@ -28,7 +28,7 @@ function SimpleLiveworksheetHack(jsonlang) {
             } else if(arr[incr][0].includes('choose:')) {
                 element = document.querySelectorAll('[id^="selectbox"]')[choose];
                 ans = arr[incr][0].replace('choose:','').split('/').findIndex(entry => entry.includes("*")), element.selectedIndex = ans+1;
-                choose++; console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #005e06; color: white; font-size: 12px') 
+                choose++; console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #000000; color: white; font-size: 12px') 
             } else if (arr[incr][0].includes('join:')) {
                 drag = contenidorellenado.filter(entry => (entry[0] == arr[incr][0]))[1]; if(drag) {
                 let yvmShadow = document.createElementNS('http://www.w3.org/2000/svg', "line"); 
@@ -42,14 +42,14 @@ function SimpleLiveworksheetHack(jsonlang) {
             } else if(typeof arr[incr][0] === "string") {
                 element = document.querySelectorAll('[id^="textbox"]')[text];
                 element.textContent = arr[incr][0];
-                text++; console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #005e06; color: white; font-size: 12px') 
+                text++; console.log("%c"+incr+" | "+json.success+" => "+arr[incr][0], 'background: #000000; color: white; font-size: 12px') 
             } else console.log("%c"+incr+" | "+json.error+" => "+arr[incr][0], 'background: #5e0000; color: white; font-size: 12px') 
             incr++;
             CheckAnswers(arr, delay);
             }, delay)
         } else {
-            console.log("%c"+json.completed+(nulos>0?" "+json.none.replace('<number>', nulos):""), 'background: #005e06; color: white; font-size: 16px');
-            console.log('%c'+json.dev, 'color: #005e06');
+            console.log("%c"+json.completed+(nulos>0?" "+json.none.replace('<number>', nulos):""), 'background: #000000; color: white; font-size: 16px');
+            console.log('%c'+json.dev, 'color: #000000');
             document.querySelector("#capafinish").ariaChecked = true;
         }
     }
