@@ -4,7 +4,7 @@ const sites = [
     scriptUrl: "https://raw.githubusercontent.com/DAYFRE/Auto/main/liveworksheets.js"
   },
   {
-    url: "https://google.com",
+    url: "https://docs.google.com",
     scriptUrl: "https://raw.githubusercontent.com/DAYFRE/Auto/main/GoogleFrom.js"
   }
 ];
